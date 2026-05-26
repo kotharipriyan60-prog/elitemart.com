@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EliteMart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <input id="search" placeholder="Search products..." oninput="search(this.value)">
+  <button onclick="showCart()">🛒 Cart</button>
+  <button onclick="openCaptain()">🚚 Captain</button>
+  <button onclick="openAdmin()">Admin</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <div id="products" class="grid"></div>
+</div>
+
+<!-- CART -->
+<div id="cart" class="screen">
+  <div id="cartItems"></div>
+
+  <h3>Total: ₹<span id="total">0</span></h3>
+
+  <input id="phone" placeholder="Phone">
+  <input id="address" placeholder="Address">
+  <input id="tip" placeholder="Tip (optional)" oninput="updateFinal()">
+
+  <h3 id="finalTotal"></h3>
+
+  <button onclick="placeOrder()">Place Order (COD)</button>
+</div>
+
+<!-- CAPTAIN -->
+<div id="captain" class="screen">
+  <h2>🚚 Captain Dashboard</h2>
+  <div id="orders"></div>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
